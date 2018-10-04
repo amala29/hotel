@@ -1,0 +1,14 @@
+.menu{
+    background-image:url('/assets/hotel-images/menu.jpg');
+    background-position:center;
+    background-size:cover;
+}
+#product{
+    padding-top:150px;
+    height:860px;
+}
+#me{
+    font-weight:bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:black;
+}

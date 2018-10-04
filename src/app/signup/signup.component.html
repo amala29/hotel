@@ -1,0 +1,50 @@
+<div class="sign">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="alert alert-danger" *ngIf="form.errors">
+      <div *ngIf="form.errors.invalidSignup">
+        Email Already Exists!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" formControlName="name">
+      <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" class="form-control" formControlName="email">
+      <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+        Email is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+      <div class="alert alert-danger" *ngIf="password.invalid && password.touched">
+        Password is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="address" id="address" class="form-control" formControlName="address">
+      <div class="alert alert-danger" *ngIf="address.invalid && address.touched">
+        Address is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="phoneNumber" id="phone" class="form-control" formControlName="phoneNumber">
+      <div class="alert alert-danger" *ngIf="phoneNumber.invalid && phoneNumber   .touched">
+       Phone Number is required.
+      </div>
+    </div>
+    <div class="text-center">
+      <div class="col-12">
+        <button class="btn btn-danger" type="submit" [disabled]="form.invalid">Sign Up</button>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </form>
+</div>

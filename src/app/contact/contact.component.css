@@ -1,0 +1,13 @@
+.contact{
+    background-image:url('/assets/hotel-images/contact.jpg');
+    background-position:center;
+    background-size:cover;
+}
+#contact{
+    padding-top:200px;
+    height:760px;
+}
+#info{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:mediumvioletred;
+}

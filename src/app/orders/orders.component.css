@@ -1,0 +1,11 @@
+.order{
+  padding-top :200px;
+  background-image:url('/assets/hotel-images/orders.jpg');
+  background-position:center;
+  background-size: cover;
+  height:760px;
+}
+#order{
+  font-weight:bold;
+  font-size:20px;
+}

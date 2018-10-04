@@ -1,0 +1,14 @@
+
+.cart{
+    background-image:url('/assets/hotel-images/cart.jpg');
+    background-position:center;
+    background-size:cover;
+    height:760px;
+}
+#cart{
+    padding-top:200px;
+}
+#image{
+    height:150px;
+    width:300px;
+}

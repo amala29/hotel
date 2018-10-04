@@ -1,0 +1,56 @@
+<div class="reservation">
+  <div class="container" id="reserve">
+    <h1 id="table" class="text-center">TABLE RESERVATION</h1>
+    <div class="col-md-10 offset-md-1">
+      <form [formGroup]="reserveForm" (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="row mt-3">
+          <div class="form-group col-md-4">
+            <input type="text" placeholder="Name*" class="form-control" formControlName="username">
+          </div>
+          <div class="form-group  col-md-4">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email*">
+          </div>
+          <div class="form-group  col-md-4">
+            <input type="text" class="form-control" formControlName="phone" placeholder="Phone Number*">
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="username.touched && username.invalid">
+            Name is required.
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="email.touched && email.invalid">
+            Email is required.
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="phone.touched && phone.invalid">
+            Phone Number is required.
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" formControlName="time" placeholder="Time*">
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" formControlName="date" placeholder="Date*">
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" formControlName="guest" placeholder="No of Guest*">
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="time.touched && time.invalid">
+
+            Time is required.
+
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="date.touched && date.invalid">
+            Date is required.
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="guest.touched && guest.invalid">
+            No of Guest is required.
+          </div>
+        </div>
+        <div class="col-md-12 offset-md-5">
+          <button class="btn btn-danger  btn-lg btn-send rounded" type="submit">Book Now</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

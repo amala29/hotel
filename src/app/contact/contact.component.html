@@ -1,0 +1,54 @@
+<div class="contact">
+<div class="container" id="contact">
+    <h1 id="info" class="text-center">CONTACT INFO</h1>
+    <div class="col-md-10 offset-md-1">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="row mt-3">
+          <div class="form-group col-md-4">
+            <input type="text" placeholder="Name*" class="form-control" formControlName="name">
+          </div>
+          <div class="form-group  col-md-4">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email*">
+          </div>
+          <div class="form-group  col-md-4">
+            <input type="phone" class="form-control" formControlName="phone" placeholder="Phone Number*">
+          </div> 
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="name.touched && name.invalid">
+            Name is required.
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="email.touched && email.invalid">
+            Email is required.
+          </div>
+          <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="phone.touched && phone.invalid">
+            Phone Number is required.
+          </div>            
+          <div class="form-group col-md-4">
+              <textarea required type="text" formControlName="message" id="message" class="form-control" placeholder="Message*">
+              </textarea>
+            </div>
+            <div class="alert alert-danger col-md-8 offset-md-2" *ngIf="message.touched && message.invalid">Message is required.</div>
+            <div class="col-md-12">
+                <button class="btn btn-danger btn-send rounded" type="submit">Send Message</button>
+              </div>
+            </div>
+            </form>
+            </div>
+            </div>
+          </div>
+          <div class="container">
+              <div class="row m-1">
+                <div class="col-md-8">
+                  <app-map></app-map>
+                </div>
+                <div class="col-md-4">
+                  <h3 class="text-success">Mobile</h3>
+                  <h3>+91 98989892924</h3>
+     <h3 class="text-success">Email</h3>
+     <a href="mailto:ad@gmail.com"><h3>ad@gmail.com</h3></a>
+     <h3 class="text-success">Address</h3>
+     <h3>9, AD street,</h3>
+     <h3>nethaji nagar-1</h3>
+     <h3>Puducherry - 605001</h3>
+    </div>
+                </div>
+         

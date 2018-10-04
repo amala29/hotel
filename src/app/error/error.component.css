@@ -1,0 +1,18 @@
+.er{
+    padding-top:200px;
+    color:maroon;
+    background-image:url('/assets/hotel-images/reserve.jpg');
+    height:760px;
+    
+}
+#error{
+    text-align:center;
+}
+#back{
+    margin-left:670px;
+}
+#psg{
+    font-size:25px;
+}
+
+

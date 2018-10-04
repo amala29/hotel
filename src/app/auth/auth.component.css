@@ -1,0 +1,12 @@
+.auth{
+    background-image:url('/assets/hotel-images/login.jpg');
+    background-position:center;
+    background-size:cover;
+    height:760px;
+}
+.height{
+    height:300px;
+}
+#auth{
+    padding-top:200px;
+}

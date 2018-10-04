@@ -1,0 +1,19 @@
+[{
+    "userId":"user1",
+    "name": "Augu",
+    "email": "augu@gmail.com",
+    "password": "augu2848"
+  },
+  {
+    "userId": "user2",
+    "name": "Amala",
+    "email": "amala@gmail.com",
+    "password": "amala2924"
+  },
+  {
+    "userId": "user3",
+    "name": "Ammu",
+    "email": "ammu@gmail.com",
+    "password": "ammu2924"
+  }
+]

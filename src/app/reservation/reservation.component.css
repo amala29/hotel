@@ -1,0 +1,18 @@
+.reservation{
+    background-image:url('/assets/hotel-images/reserve.jpg');
+background-position: center;
+background-size:cover;
+}
+#reserve{
+    padding-top:200px; 
+    height:760px;   
+}
+#table{
+    font-weight:bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:mediumvioletred;
+}
+
+.form-control.ng-invalid.ng-touched{
+    border: 2px solid tomato;
+}

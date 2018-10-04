@@ -1,0 +1,16 @@
+.products{
+  background-image:url('/assets/hotel-images/pro.jpg');
+  background-position:center;
+  background-size: cover;
+  height:760px;
+}
+.card-img-top{
+    height:150px;
+    width:250px;
+}
+
+#products {
+  padding-top: 150px;
+}
+
+  

@@ -1,0 +1,30 @@
+<div class="login">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="alert alert-danger" *ngIf='form.errors'>
+    <div *ngIf="form.errors.invalidLogin">
+      Email or Password is incorrect.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" id="email" class="form-control" formControlName="email">
+    <div class="alert alert-danger" *ngIf='email.invalid && email.touched'>
+      Email is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" class="form-control" formControlName="password">
+    <div class="alert alert-danger" *ngIf='password.invalid && password.touched'>
+      Password is required.
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="col-12">
+      <button class="btn btn-success" [disabled]="form.invalid" type="submit">Login</button>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</form>
+</div>
+
