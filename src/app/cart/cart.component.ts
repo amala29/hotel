@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
   cart: Item[] = [];
   products: Product[] = [];
   currentUser: User;
-  total: number = 0;
+  total = 0;
   orderSuccess = false;
   constructor(private cartService: CartService,
     private productService: ProductsService,
@@ -22,7 +22,13 @@ export class CartComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.orderSuccess = false;
   }
-
+  getProduct(id: string) {
+    for (const product of this.products) {
+      if (product.id === id) {
+        return product;
+      }
+    }
+  }
 
   ngOnInit() {
     this.productService.getProducts().subscribe(products => {
@@ -42,6 +48,7 @@ export class CartComponent implements OnInit {
   removeItem(item: Item) {
     const index = this.cart.indexOf(item);
     this.cart.splice(index, 1);
+    this.updatePrice();
   }
 
   checkout() {
@@ -50,13 +57,7 @@ export class CartComponent implements OnInit {
     this.cart = [];
     this.orderSuccess = true;
   }
-  getProduct(id: string) {
-    for (const product of this.products) {
-      if (product.id === id) {
-        return product;
-      }
-    }
-  }
+
 }
 
 

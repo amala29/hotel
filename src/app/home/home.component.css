@@ -9,3 +9,39 @@
     font-weight:bold;
     font-size:30px;
 }
+#time{
+    height:400px;
+}
+.timing{
+    background-image: url('/assets/hotel-images/time.jpg');  
+}
+#open{
+    margin-left:450px;
+    color:magenta;
+}
+#mon{
+    height:80px;
+    color:black;
+    background-color:gold;
+    text-align:center;
+    border:3px solid darkgreen;
+}
+#mon:hover{
+    cursor:pointer;
+    color:red;
+}
+#sat{
+    height:80px;
+    color:black;
+    background-color:gold;
+    text-align:center;
+    border:3px solid darkgreen;
+}
+#sat:hover{
+    cursor: pointer;
+    color: red;
+}
+h4{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:none;
+}

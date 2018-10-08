@@ -11,20 +11,19 @@ import { Product } from '../products/product';
 })
 export class ProductComponent implements OnInit {
   product:any;
-name=this.route.snapshot.params.name;
+
   constructor(private route:ActivatedRoute, private service: ProductsService) { }
 
   ngOnInit() {
-    const categoryid = this.route.snapshot.params.categoryid;
+    const id = this.route.snapshot.params.id;
     this.service.getProduct().subscribe(products => {
       console.log(products);
       for (const pro of products) {
-        if (pro.categoryId === categoryid) {
+        if (pro.id === id) {
           this.product = pro;
           console.log(this.product);
         }
       }
     });
   }
-
 }

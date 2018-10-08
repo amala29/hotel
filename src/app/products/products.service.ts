@@ -8,13 +8,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  [x: string]: any;
   url = "../../assets/data.json";
   Products: Product[] = [];
   constructor(private http: HttpClient) {
 
   }
   getProducts() {
+    return this.http.get<Product[]>(this.url);
+  }
+  getProduct(){
     return this.http.get<Product[]>(this.url);
   }
 

@@ -3,7 +3,7 @@
     No Orders placed yet.
   </div>
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let order of myorders">
+    <li class="list-group-item" *ngFor="let order of orders">
       <div>
         <p>Order ID : {{order.orderId}}</p>
         <p>Order Date : {{order.date | date}}</p>
