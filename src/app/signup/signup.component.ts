@@ -39,17 +39,19 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    const user = new User(new Date().getMilliseconds().toString(), this.name.value, this.email.value, this.password.value);
-    const result = this.service.signup(user);
-    if (result) {
+    
+    this.service.signup(this.form.value).subscribe(user => {
+      console.log(user);
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      this.form.reset();
       this.router.navigate(['']);
       location.reload();
-    } else {
-      this.form.setErrors({
-        invalidSignup: true
+    },
+      error => {
+        console.log(error);
+        this.form.setErrors({
+          invalidSignup: true
+        });
       });
-    }
   }
-
-
 }

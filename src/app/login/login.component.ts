@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   });
- 
 
-  constructor(private service: AuthService,private router:Router) { }
+
+  constructor(private service: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -29,16 +29,25 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    const result = this.service.login(this.email.value, this.password.value);
-    if (result) {
-      this.router.navigate(['']);
-      location.reload();
-    } else {
-      this.form.setErrors({
-        invalidLogin: true
+    this.service.login(this.email.value, this.password.value)
+      .subscribe(user => {
+        if (user._id) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.form.reset();
+          this.router.navigate(['']);
+          location.reload();
+        } else {
+          this.form.setErrors({
+            invalidLogin: true
+          });
+        }
+      }, error => {
+        this.form.setErrors({
+          invalidLogin: true
+        });
       });
-    }
   }
-
 }
+
+
 

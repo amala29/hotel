@@ -20,11 +20,13 @@ export class CartComponent implements OnInit {
     private productService: ProductsService,
     private ordersService: OrdersService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(this.currentUser);
+    
     this.orderSuccess = false;
   }
-  getProduct(id: string) {
+  getProduct(_id:String) {
     for (const product of this.products) {
-      if (product.id === id) {
+      if (product._id === _id) {
         return product;
       }
     }
@@ -41,7 +43,7 @@ export class CartComponent implements OnInit {
   updatePrice() {
     this.total = 0;
     for (const item of this.cart) {
-      this.total += this.getProduct(item.id).price * item.quantity;
+      this.total += this.getProduct(item.productId).price * item.quantity;
     }
   }
 
@@ -52,12 +54,17 @@ export class CartComponent implements OnInit {
   }
 
   checkout() {
-    this.ordersService.placeOrder(this.cart, this.currentUser.userId);
+    this.ordersService.placeOrder(this.cart)
+      .subscribe(
+        orders => {
+          console.log(orders);
+        }, error => {
+          console.log(error);
+        });
     this.cartService.cart = [];
     this.cart = [];
     this.orderSuccess = true;
-  }
-
+    }
 }
 
 

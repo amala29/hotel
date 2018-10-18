@@ -10,16 +10,16 @@ import { Product } from '../products/product';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  product:any;
+  product:Product;
 
   constructor(private route:ActivatedRoute, private service: ProductsService) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params.id;
+    const _id = this.route.snapshot.params._id;
     this.service.getProduct().subscribe(products => {
       console.log(products);
       for (const pro of products) {
-        if (pro.id === id) {
+        if (pro._id === _id) {
           this.product = pro;
           console.log(this.product);
         }

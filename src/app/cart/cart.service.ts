@@ -10,13 +10,13 @@ export class CartService {
   addToCart(id: string, quantity: number) {
     let index = -1;
     for (const item of this.cart) {
-      if (item.id === id) {
+      if (item.productId === id) {
         index = this.cart.indexOf(item);
       }
     }
 
     if (index === -1) {
-      this.cart.push({ id: id, quantity: +quantity });
+      this.cart.push({ productId: id, quantity: +quantity });
     } else {
       const it = this.cart[index];
       it.quantity = it.quantity + +quantity;
@@ -30,6 +30,6 @@ export class CartService {
 }
 
 export interface Item {
-  id: string;
+  productId: string;
   quantity: number;
 }

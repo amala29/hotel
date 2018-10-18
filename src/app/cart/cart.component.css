@@ -3,7 +3,7 @@
     background-image:url('/assets/hotel-images/cart.jpg');
     background-position:center;
     background-size:cover;
-    height:760px;
+    min-height:900px;
 }
 #cart{
     padding-top:200px;

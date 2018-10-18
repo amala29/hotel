@@ -1,6 +1,6 @@
 export class Product {
     constructor(
-        public id?: string,
+        public _id?: string,
         public categoryId?:string,
         public title?: string,
         public imageUrl?: string,
@@ -8,7 +8,7 @@ export class Product {
     }
 
     getId() {
-        return this.id;
+        return this._id;
     }
     getCategoryId(){
         return this.categoryId;

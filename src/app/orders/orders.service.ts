@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../cart/cart.service';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../user';
+import { Order } from './orders.component';
 
 
 @Injectable({
@@ -8,30 +11,24 @@ import { Item } from '../cart/cart.service';
 export class OrdersService {
 
 
-  orders: Order[] = [];
-  constructor() {
-    const orders = localStorage.getItem('orders');
-    if (orders != null) {
-      this.orders = JSON.parse(orders);
-   }
+  // url = 'http://localhost:3000/api';
+  // url = '';
+  url = 'http://localhost:8080/api/order';
+  constructor(private http: HttpClient) {
   }
 
-  placeOrder(cart: Item[],userId: string) {
-    const orderId = new Date().getMilliseconds().toString();
-    const order = {
-      orderId: orderId,
+  placeOrder(cart: Item[]) {
+    const user: User = JSON.parse(localStorage.getItem('currentUser'));
+    return this.http.post(this.url, {
       cart: cart,
-      userId: userId,
-      date: new Date()
-    };
-    this.orders.push(order);
-    localStorage.setItem('orders', JSON.stringify(this.orders));
+      userId: user._id
+    });
+  }
+
+
+  getOrders() {
+    const user: User = JSON.parse(localStorage.getItem('currentUser'));
+    return this.http.post<Order[]>(this.url + '/' + user._id, {});
   }
 }
 
-export interface Order {
-  orderId: string;
-  cart: Item[];
-  userId: string;
-  date: Date;
-}

@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  url = 'http://localhost:27017/hotel';
+  url = 'http://localhost:8080/api/products';
+  // url='';
   Products: Product[] = [];
   constructor(private http: HttpClient) {
 

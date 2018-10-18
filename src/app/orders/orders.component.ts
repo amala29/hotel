@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Order, OrdersService } from './orders.service';
+import { OrdersService } from './orders.service';
 import { User } from '../user';
+import { Item } from '../cart/cart.service';
 
 @Component({
   selector: 'app-orders',
@@ -9,21 +10,25 @@ import { User } from '../user';
 })
 export class OrdersComponent implements OnInit {
   orders: Order[] = [];
-  currentUser:User;
-  myOrders:Order[]=[];
   constructor(private service: OrdersService) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.orders = this.service.orders;
-    for (const order of this.orders) {
-      if (order.userId === this.currentUser.userId) {
-        this.myOrders.push(order);
-      }
-    }
   }
 
   
 
   ngOnInit() {
+    this.service.getOrders().subscribe(
+      orders => {
+        this.orders = orders;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
   }
 
+
+export interface Order {
+  _id: String;
+  cart: Item[];
 }
