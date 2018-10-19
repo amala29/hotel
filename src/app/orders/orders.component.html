@@ -1,10 +1,10 @@
 <div class="order">
-  <div class="alert alert-primary text-center" id="order" *ngIf="orders.length == 0">
+  <div class="container alert alert-primary text-center" id="order" *ngIf="orders.length == 0">
     No Orders placed yet.
   </div>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let order of orders">
-      <div>
+      <div class="container jumbotron">
         <p>Order ID : {{order._id}}</p>
         <p>Order Date : {{order.date | date}}</p>
       </div>
