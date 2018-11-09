@@ -32,7 +32,7 @@ export class ContactComponent implements OnInit {
   get message() {
     return this.form.controls.message;
   }
-  OnSubmit() {
+  onSubmit() {
 
     console.log(this.form.controls);
 

@@ -12,8 +12,9 @@ export class OrdersService {
 
 
   // url = 'http://localhost:3000/api';
-  // url = '';
-  url = 'http://localhost:8080/api/order';
+  url='https://hotel-app1.herokuapp.com/api/order';
+
+  //url = 'http://localhost:8080/api/order';
   constructor(private http: HttpClient) {
   }
 

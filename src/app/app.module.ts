@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { AboutComponent } from './about.component';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { CartComponent } from './cart/cart.component';
@@ -18,6 +17,8 @@ import { ProductsComponent } from './products/products.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { AppRoutes } from './routes';
 import { SignupComponent } from './signup/signup.component';
+import { InfoComponent } from './info/info.component';
+
 
 
 
@@ -35,9 +36,9 @@ import { SignupComponent } from './signup/signup.component';
     ProductComponent,
     HomeComponent,
     ContactComponent,
-    AboutComponent,
+    InfoComponent,
     ErrorComponent,
-    MapComponent
+    MapComponent,
   ],
   imports: [
     BrowserModule,

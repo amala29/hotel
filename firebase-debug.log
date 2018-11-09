@@ -1,29 +1,39 @@
-[debug] [2018-10-18T19:18:21.109Z] ----------------------------------------------------------------------
-[debug] [2018-10-18T19:18:21.111Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
-[debug] [2018-10-18T19:18:21.111Z] CLI Version:   4.2.1
-[debug] [2018-10-18T19:18:21.111Z] Platform:      win32
-[debug] [2018-10-18T19:18:21.111Z] Node Version:  v8.11.3
-[debug] [2018-10-18T19:18:21.112Z] Time:          Fri Oct 19 2018 00:48:21 GMT+0530 (India Standard Time)
-[debug] [2018-10-18T19:18:21.112Z] ----------------------------------------------------------------------
+[debug] [2018-11-09T00:11:21.550Z] ----------------------------------------------------------------------
+[debug] [2018-11-09T00:11:21.553Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2018-11-09T00:11:21.553Z] CLI Version:   6.0.1
+[debug] [2018-11-09T00:11:21.554Z] Platform:      win32
+[debug] [2018-11-09T00:11:21.554Z] Node Version:  v8.11.3
+[debug] [2018-11-09T00:11:21.554Z] Time:          Fri Nov 09 2018 05:41:21 GMT+0530 (India Standard Time)
+[debug] [2018-11-09T00:11:21.554Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-10-18T19:18:21.206Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-10-18T19:18:21.209Z] > authorizing via signed-in user
-[debug] [2018-10-18T19:18:21.215Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-10-18T19:18:21.216Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2018-11-09T00:11:21.574Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-09T00:11:21.575Z] > authorizing via signed-in user
+[debug] [2018-11-09T00:11:21.575Z] [iam] checking project hotel1-d621a for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2018-11-09T00:11:21.577Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hotel1-d621a:testIamPermissions  
 
-[debug] [2018-10-18T19:18:21.539Z] <<< HTTP RESPONSE 200
-[debug] [2018-10-18T19:18:21.571Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hotel-fbabd  
+[debug] [2018-11-09T00:11:23.247Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-09T00:11:23.248Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hotel1-d621a  
  
-[debug] [2018-10-18T19:18:22.661Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-09T00:11:23.785Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Deploying to 'hotel-fbabd'...
+[info] === Deploying to 'hotel1-d621a'...
 [info] 
-[info] i  deploying hosting
-[debug] [2018-10-18T19:18:22.686Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hotel-fbabd/versions  
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-11-09T00:11:23.817Z] >>> HTTP REQUEST PUT https://hotel1-d621a.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2018-11-09T00:11:27.402Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database hotel1-d621a is valid
+[debug] [2018-11-09T00:11:27.418Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hotel1-d621a/versions  
 
-[debug] [2018-10-18T19:18:28.415Z] <<< HTTP RESPONSE 200
-[info] i  hosting[hotel-fbabd]: beginning deploy...
-[debug] [2018-10-18T19:18:28.812Z] Error: EPERM: operation not permitted, scandir 'C:\Users\admin\AppData\Local\Application Data'
+[debug] [2018-11-09T00:11:30.286Z] <<< HTTP RESPONSE 200
+[info] i  hosting[hotel1-d621a]: beginning deploy...
+[debug] [2018-11-09T00:11:30.829Z] Error: EPERM: operation not permitted, scandir 'C:\Users\admin\AppData\Local\Application Data'
     at Object.fs.readdirSync (fs.js:904:18)
     at GlobSync._readdir (C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:288:41)
     at GlobSync._readdirInGlobStar (C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:245:17)
@@ -36,3 +46,28 @@
     at GlobSync._process (C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2018-11-09T00:11:38.750Z] ----------------------------------------------------------------------
+[debug] [2018-11-09T00:11:38.754Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2018-11-09T00:11:38.754Z] CLI Version:   6.0.1
+[debug] [2018-11-09T00:11:38.754Z] Platform:      win32
+[debug] [2018-11-09T00:11:38.754Z] Node Version:  v8.11.3
+[debug] [2018-11-09T00:11:38.755Z] Time:          Fri Nov 09 2018 05:41:38 GMT+0530 (India Standard Time)
+[debug] [2018-11-09T00:11:38.755Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-09T00:11:38.769Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-09T00:11:38.770Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\admin
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+

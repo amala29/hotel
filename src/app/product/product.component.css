@@ -2,29 +2,26 @@
     background-image:url('/assets/hotel-images/menu.jpg');
     background-position:center;
     background-size:cover;
+    margin-bottom: 70px;
+    
 }
 #product{
     padding-top:150px;
     height:100%;
 }
 #me{
+  padding-top:80px;
     font-weight:bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
     color:black;
+    
 }
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
-  }
- .overlay:hover {
-    opacity: 1;
- }
- 
+
+@media only screen and (max-width: 768px) {
+    
+   img {
+       margin-top: 20px;
+   }
+}
+
+    

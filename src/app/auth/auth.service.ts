@@ -7,8 +7,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService implements OnInit {
-  // url = '';
-  url='http://localhost:8080/api';
+  url='https://hotel-app1.herokuapp.com/api';
+
+  //url='http://localhost:8080/api';
 
   constructor(private router: Router, private http: HttpClient) { }
 

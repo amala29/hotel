@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  url = 'http://localhost:8080/api/products';
-  // url='';
+  //url = 'http://localhost:8080/api/products';
+   url='https://hotel-app1.herokuapp.com/api/products';
   Products: Product[] = [];
   constructor(private http: HttpClient) {
 
